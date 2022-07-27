@@ -1,6 +1,7 @@
 const projects = [
     {
         id:"1",
+        author:"kms",
         picture:"./asset/img/imgProject/topic1.png",
         name:"Ukraine Relief & Recovery",
         title:"",
@@ -14,6 +15,7 @@ const projects = [
     },
     {
         id:"2",
+        author:"kms",
         picture:"./asset/img/imgProject/topic2.png",
         name:"Afghanistan Earthquake",
         title:"",
@@ -27,6 +29,7 @@ const projects = [
     },
     {
         id:"3",
+        author:"kms",
         picture:"./asset/img/imgProject/topic3.png",
         name:"Roe v. Wade Reversal",
         title:"",
@@ -40,6 +43,7 @@ const projects = [
     },
     {
         id:"4",
+        author:"kms",
         picture:"./asset/img/imgProject/topic4.png",
         name:"Black-Founded Nonprofits",
         title:"",
@@ -53,6 +57,7 @@ const projects = [
     },
     {
         id:"5",
+        author:"kms",
         picture:"./asset/img/imgProject/topic5.png",
         name:"Immigration and Refugees",
         title:"",
@@ -66,6 +71,7 @@ const projects = [
     },
     {
         id:"6",
+        author:"kms",
         picture:"./asset/img/imgProject/topic6.jpg",
         name:"Mental Health Awareness",
         title:"",
@@ -79,6 +85,7 @@ const projects = [
     },
     {
         id:"7",
+        author:"",
         picture:"./asset/img/imgProject/topic7.png",
         name:"Racial Justice & Civil Rights",
         title:"",
@@ -92,6 +99,7 @@ const projects = [
     },
     {
         id:"8",
+        author:"",
         picture:"./asset/img/imgProject/topic8.png",
         name:"COVID-19: Relief & Recovery Efforts",
         title:"",
@@ -105,6 +113,7 @@ const projects = [
     },
     {
         id:"9",
+        author:"",
         picture:"./asset/img/imgProject/topic9.jpg",
         name:"Voting Rights and Election Laws",
         title:"",
@@ -118,6 +127,7 @@ const projects = [
     },
     {
         id:"10",
+        author:"",
         picture:"./asset/img/imgProject/topic10.jpg",
         name:"Environmental Nonprofits",
         title:"",
