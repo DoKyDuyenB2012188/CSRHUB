@@ -2,7 +2,7 @@ const projects = [
     {
         id:"1",
         author:"kms",
-        picture:"./asset/img/imgProject/topic1.png",
+        picture:"https://cn-web-site.s3.amazonaws.com/Hot+Topics+2022/Ukraine+HT-new.png",
         name:"Ukraine Relief & Recovery",
         title:"",
         type:"hot",
@@ -16,7 +16,7 @@ const projects = [
     {
         id:"2",
         author:"kms",
-        picture:"./asset/img/imgProject/topic2.png",
+        picture:"https://cn-web-site.s3.amazonaws.com/Hot+Topics+2022/afghanistan_earthquake_htweb.png",
         name:"Afghanistan Earthquake",
         title:"",
         type:"hot",
@@ -30,7 +30,7 @@ const projects = [
     {
         id:"3",
         author:"kms",
-        picture:"./asset/img/imgProject/topic3.png",
+        picture:"https://cn-web-site.s3.amazonaws.com/Hot+Topics+2022/roe_v_wade_web.png",
         name:"Roe v. Wade Reversal",
         title:"",
         type:"hot",
@@ -44,7 +44,7 @@ const projects = [
     {
         id:"4",
         author:"kms",
-        picture:"./asset/img/imgProject/topic4.png",
+        picture:"https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_53/3438733/201230-black-table-arts-al-1129.jpg",
         name:"Black-Founded Nonprofits",
         title:"",
         type:"hot",
@@ -58,7 +58,7 @@ const projects = [
     {
         id:"5",
         author:"kms",
-        picture:"./asset/img/imgProject/topic5.png",
+        picture:"https://cn-web-site.s3.amazonaws.com/Hot+Topics+2022/refugee_web.png",
         name:"Immigration and Refugees",
         title:"",
         type:"popular",
@@ -72,7 +72,7 @@ const projects = [
     {
         id:"6",
         author:"kms",
-        picture:"./asset/img/imgProject/topic6.jpg",
+        picture:"https://cn-web-site.s3.amazonaws.com/hot-topics/rsz_1madison-lavern-4gcqrf3-f2i-unsplash.jpg",
         name:"Mental Health Awareness",
         title:"",
         type:"",
@@ -86,7 +86,7 @@ const projects = [
     {
         id:"7",
         author:"",
-        picture:"./asset/img/imgProject/topic7.png",
+        picture:"https://cn-web-site.s3.amazonaws.com/Hot+Topics+2022/stop-gun-violence.png",
         name:"Racial Justice & Civil Rights",
         title:"",
         type:"",
@@ -100,7 +100,7 @@ const projects = [
     {
         id:"8",
         author:"",
-        picture:"./asset/img/imgProject/topic8.png",
+        picture:"https://cn-web-site.s3.amazonaws.com/Hot+Topics+2021/covid-relief.png",
         name:"COVID-19: Relief & Recovery Efforts",
         title:"",
         type:"",
@@ -114,7 +114,7 @@ const projects = [
     {
         id:"9",
         author:"",
-        picture:"./asset/img/imgProject/topic9.jpg",
+        picture:"https://d20umu42aunjpx.cloudfront.net/Hot+Topics+2020/voting-rights-header.jpg",
         name:"Voting Rights and Election Laws",
         title:"",
         type:"",

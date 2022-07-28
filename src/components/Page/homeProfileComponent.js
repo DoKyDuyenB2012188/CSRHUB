@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "./CardComponent";
 import projects from "../../shared/projects";
-function HomeProfile() {
+function HomeProfile({ profile }) {
   const [current, setcurrent] = useState("home");
   const HandleClick = (e) => {
     /*remove curent page*/
@@ -20,13 +20,11 @@ function HomeProfile() {
       update.classList.add("show");
     }
   };
-  const Projects = projects.map((project) => {
-    if (project.author == "kms") {
-      return <Card topic={project} />;
-    } else {
-      return <div></div>;
+  const Projects = projects.map((project)=>{
+    if(profile.projects.includes(project.id)){
+      return <Card topic={project} />
     }
-  });
+  })
   return (
     <div className="container-fluid p-0">
       <div className="cover-layer">
@@ -35,14 +33,11 @@ function HomeProfile() {
             <div className="col-md-4">
               <div className="profil-det-img d-flex">
                 <div className="dp">
-                  <img
-                    src="https://img.freepik.com/premium-vector/female-user-profile-avatar-is-woman-character-screen-saver-with-emotions_505620-617.jpg"
-                    alt=""
-                  />
+                  <img src={profile.avatar} alt="" />
                 </div>
                 <div className="pd">
-                  <h2>KMS technology</h2>
-                  <p>Enterprise</p>
+                  <h2>{profile.name}</h2>
+                  <p>{profile.type}</p>
                 </div>
               </div>
             </div>
@@ -50,16 +45,16 @@ function HomeProfile() {
               <ul>
                 <li>
                   <i className="fa fa-envelope"></i>
-                  kms@gmail.com
+                  {profile.email}
                 </li>
                 <li>
-                  <i className="ffa-solid fa-phone"></i> +123 234 234
+                <img width='7%' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACRElEQVRoge3ZO2sUURiH8d8aYwTRRjFeMCBWGksRSxHtlDSioCBC1I8g+AnETq3Ub2ARjNcQSaGBIMRCI3hDQRGsjAlKBFFhLY5b5DI7cybunC32gbdYmFn+D+dwLu/QoUNSBjCJ73iKfWnjxNONa6gvqFlsTZgrirV4YLFEo+6ni1acLXgpW6JRp1IFLEIv3sqXqGMGm9PEbM4qTCgm0ajbSZLmcEGcRKNOpgjbjI/KiUxjU4K8mcwpJ1LHUIK8mbxTXqSO49VHXpohyxN5U33kwIoFv0eX+X99y3z/v7ERf5QfkSfVR85mTHmRttrpB5STeG7xVE1KDVPiRQ6lCJvHMXESd9LEzKeGccVFBtPELEY/fikmMoMdaWIW45Lio/IMa9LEzKdHCFhUZuzfO23JLvxQXOYWViZJWoCz4laxG8KC0ZYs1U1pVpfTxMynG4/EyVzRpiPTi/fip1lXirB59OGTOJlhrE4RNo/d+CpOZtTS+0wXTgut2N94LRyRKmOv0AuOkZky/wRwQPY+dVdoFFbCQfxsEjzrODOIewWencaJqmQGSsjE1rCKOpr7xU+z2JrFuSpk9uBLi2XqGMG2Vsv043MFMrPCYtNStovfNMvUZKtFCG2lmBtmmfpWhQjhE8X1FopMVCXS4Iy4+0zROlylRIOd4m6aeXW12vjz6cFFxRsaWTWiTW6g/XisnMQLrKs+cjY1HBU33V4J96G2pIYjeCgc4bMkxrEhUcZo1gun4pvCB6M5fMB54ZrdoUMK/gIkOoi24oe75gAAAABJRU5ErkJggg=="/> {profile.nunber}
                 </li>
               </ul>
             </div>
             <div className="col-md-4 d-flex map-mark">
-              <i className="fa-solid fa-location-dot"></i>
-              <p>First Floor,Vincent Plaza, Kuzhithurai, Marthandam </p>
+            <img height='35%' className="mt-4 mr-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAADYUlEQVR4nO2bMWgUQRSGPyNGo+RiTiGoIaIWCnbGRhDT2AgqwWBKESNiJ1iJIthpI0Ybe0uJIcTSXsQohjSJioLRJnpijGJhEmIxe7g592b2zc7eZM388JrcvH/f/+fN7c7OHASsbqzxXUAGlIFe4CSwD+iM/v4JmARGgRHgm5fqckQLcA34DiwZYha4GuX8F9gOPMcsvDZeAV15F9cF3AIq0UUrwD2g2xF/J6q9peKr8RHY4aiWZegBhoAFzcUngMtAh+U1WoCXGv60MQZssKxhGdYDZ4BxYQELwJMoVzIvrwuvo4srVooj1LZ5lqhOkQOGa5ZJ94WXNmaBdqnwapvPG8jHgfMWRemmyDlD7jTQB7RG0QtMGXLOphHdAgxgbvOFyJyeWK7tf2cedf8+BayLuEYM4ssJtbdHn9XLGzaJv4m5zSuo6ZB0e3HRqrsjrteaMX0aDac1eVMmA0xtPoD+S8yFAZsirjnNmFZNDSVN3pzUgHn+bXNJvk1U8VMzRmdAmybvh1SA9CnKpQHvNGN6NTX0a/LeSgVI4dKAYc2YKZJvaVtQT3718oakAqRwacAFw7hp1BdeKYp+g/gl1K26MAaUUEtaF5xLqAehzVXyJgtxjcYccMch322UCVqspA4A9VD0zAHnC6DZRoAUrg0A2AXMZOCbiTisBEiRhwEAB9E/F9SLX8ChLAKkyMsAgOPo3z3UxiJqbZFJQNZ8lwYAXBTwXLKof8UbADCYgmMwNj5p1ZhagBSNMKAJeKTJfwysjY1/kEWAFI0wANSK9GlC7hh/V5MAx6Q6imIAwFbgTSzvPcvfLJWAD1IdRTIAYA/wGfgK7K357L4NZ9EMADgcRRxHULfBVWFAEuJTI5Gz3uZo7WDpJqoLAS42bo06irAazBXBAN8F+EYwwHcBvhEM8F2AbwQDfBfgG8EA3wX4RjDAdwG+4dKAbcAN4ItDTm+QrM27US8cTQeofLwPsOY0JdqeEyy8AfE2z0v4ijRAek6wDbUdNZoipxAG6CLpnGAcHahDkBNC3lTb2EId1olJMQvcBXYKePejzhZm2eZuyLTSkUyiNhw3Sghr0AycAB4Cvx2Jy9WARdRe21Hc/8ymjDoI5eI4vHMDbNo8C/KeIqmR5jhsQEBAQEBAQECh8Qeh1on4iPd1ngAAAABJRU5ErkJggg=="/>
+              <p>{profile.address}</p>
             </div>
           </div>
           <div className="nav-detail">
@@ -145,20 +140,14 @@ function HomeProfile() {
                 <div className="row no-margin home-det">
                   <div className="col-md-4 big-img">
                     <img
-                      src="https://thanhlapcongtyonline.com/hoanghung/31/images/thanh-lap-cty1(3).jpg"
-                      alt=""
+                      src={profile.background}
+                      alt="" 
                     />
                   </div>
                   <div className="col-md-8 home-dat">
                     <div className="detal-jumbo">
-                      <h3>Technology Product Companies</h3>
-                      <p>
-                        Each KMS company continuously builds and launches their
-                        own software product companies. Building companies, not
-                        just products, gives us a unique perspective and a
-                        practical advantage when it comes to helping our
-                        customers.
-                      </p>
+                      <h3>{profile.title}</h3>
+                      <p>{profile.intro}</p>
                     </div>
                     <div className="links">
                       <div className="row">
@@ -201,15 +190,15 @@ function HomeProfile() {
                             <tbody>
                               <tr>
                                 <th>Position</th>
-                                <td>Companies</td>
+                                <td>{profile.position}</td>
                               </tr>
                               <tr>
                                 <th>Nationality</th>
-                                <td>Vietnamese</td>
+                                <td>{profile.country}</td>
                               </tr>
                               <tr>
                                 <th>Year of birth</th>
-                                <td>2009</td>
+                                <td>{profile.birth}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -222,15 +211,15 @@ function HomeProfile() {
                             <tbody>
                               <tr>
                                 <th>Age</th>
-                                <td>10+ Years</td>
+                                <td>{profile.age}</td>
                               </tr>
                               <tr>
                                 <th>Website</th>
-                                <td>kms-technology.com</td>
+                                <td>{profile.connect.website}</td>
                               </tr>
                               <tr>
                                 <th>Languages</th>
-                                <td>English,Vietnamese</td>
+                                <td>{profile.language}</td>
                               </tr>
                             </tbody>
                           </table>
@@ -247,87 +236,25 @@ function HomeProfile() {
                 aria-labelledby="profile-tab"
               >
                 <div className="profile-desic">
-                  <p>
-                    Accelerate Your Software Development with Confidence We
-                    don’t just build software, we build software companies.
-                  </p>
+                  <p>{profile.intro}</p>
                 </div>
                 <div className="sec-title">
-                  <h2>Services</h2>
+                  <h2>{profile.title}</h2>
                 </div>
                 <div className="row service-ro no-margin">
-                  <div
-                    className="col-lg-4 col-md-6
+                  {profile.profile.works.map((work) => {
+                    return (
+                      <div
+                        key={work.id}
+                        className="col-lg-4 col-md-6
                                     singe-servic"
-                  >
-                    <i className="fab fa-delicious"></i>
-                    <h4>Graphic Design</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                  <div
-                    className="col-lg-4 col-md-6
-                                    singe-servic"
-                  >
-                    <i className="fas fa-code"></i>
-                    <h4>Website Design</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                  <div
-                    className="col-lg-4 col-md-6
-                                    singe-servic"
-                  >
-                    <i className="fab fa-chrome"></i>
-                    <h4>Web Development</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                  <div
-                    className="col-lg-4 col-md-6
-                                    singe-servic"
-                  >
-                    <i className="fab fa-android"></i>
-                    <h4>Android Development</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                  <div
-                    className="col-lg-4 col-md-6
-                                    singe-servic"
-                  >
-                    <i className="fab fa-app-store-ios"></i>
-                    <h4>IOS Design</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                  <div
-                    className="col-lg-4 col-md-6
-                                    singe-servic"
-                  >
-                    <i className="fas fa-mobile-alt"></i>
-                    <h4>Ionic Development</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
+                      >
+                        <i className="fab fa-delicious"></i>
+                        <h4>{work.name}</h4>
+                        <p>{work.content}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div
@@ -337,23 +264,27 @@ function HomeProfile() {
                 aria-labelledby="contact-tab"
               >
                 <div className="sec-title">
-                  <h2>Achievement about charity</h2>
+                  <h2>{profile.achievement.title}</h2>
                 </div>
-                <div className="service no-margin row">
-                  <div
-                    className="col-sm-3 resume-dat
+                {profile.achievement.events.map((event) => {
+                  return (
+                    <div className="service no-margin row">
+                      <div
+                        className="col-sm-3 resume-dat
                                     serv-logo"
-                  >
-                    <h6>2013-2015</h6>
-                    <p>Special</p>
-                  </div>
-                  <div className="col-sm-9 rgbf">
-                    <h5>Support for education charity</h5>
-                    <p>
-                      We really appreciate your contributions to the community
-                    </p>
-                  </div>
-                </div>
+                      >
+                        <h6>{event.year}</h6>
+                        <p>{'From '+ event.fromprofile}</p>
+                      </div>
+                      <div className="col-sm-9 rgbf">
+                        <h5>{event.name}</h5>
+                        <p>
+                          {event.content}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
               <div
                 className="tab-pane portfolio-detail fade"

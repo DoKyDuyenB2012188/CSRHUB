@@ -4,8 +4,15 @@ import Header from './header&footer/headerComponent';
 import Footer from './header&footer/footerComponent';
 import Profile from './Page/profileComponent';
 import HomeProfile from './Page/homeProfileComponent';
-import {BrowserRouter,Routes,Route,Redirect} from "react-router-dom";
+import profiles from '../shared/profile';
+import {BrowserRouter,Routes,Route, useParams} from "react-router-dom";
 function Main(){
+    const ShowProfile = () =>{
+        let params = useParams();
+        return(
+            <HomeProfile profile={profiles.filter((profile) => profile.connectuser === (params.profileId))[0]}/>
+        )
+    }
     return(
         <div className="App">
         <Header />
@@ -14,9 +21,8 @@ function Main(){
                 <Route path="/home" element={<HomePage/>} />
                 <Route exact path="/profile" element={<Profile />} />
                 <Route exact path="/signIn" element={<Login />}/>
-                <Route exact path="/show_profile" element={<HomeProfile />}/>
-                {/* <Route path="/menu/:dishId" component={} />
-                <Route exact path="/contactus" component={} /> */}
+                <Route exact path="/show_profile/:profileId" element={<ShowProfile/>}/>
+                <Route exact path=""/>
             </Routes>
         <Footer />
       </div>
