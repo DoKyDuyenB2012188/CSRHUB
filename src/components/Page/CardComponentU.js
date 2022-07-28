@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CardU({profile}) {
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3">
-      <NavLink key ={profile.connectuser} className="untext" to={'/show_profile/'+ profile.connectuser}>
+      <Link key ={profile.connectuser} className="untext" to={'/show_profile/'+ profile.connectuser}>
         <div className="our-team">
           <div className="picture">
             <img
@@ -16,7 +16,7 @@ function CardU({profile}) {
             <h4 className="title">{profile.type}</h4>
           </div>
         </div>
-      </NavLink>
+      </Link>
     </div>
   );
 }

@@ -12,7 +12,7 @@ function Card({ topic }) {
           <h1>{topic.name}</h1>
           <p>{topic.title}</p>
           <p className="read-more">
-            <a href="#">Read More</a>
+            <a href={'/single_page/'+topic.id}>Read More</a>
           </p>
         </div>
       </div>

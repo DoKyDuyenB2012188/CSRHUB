@@ -64,7 +64,7 @@ function HomePage() {
         </div>
         <div className="row w-100 p-0">
           <div className="col-6 col-lg-6">
-            <NavLink className="item_body nav-link p-0" to="">
+            <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[0].id}>
               <img className="brightness" src={hostTopic[0].picture}></img>
               <div className="overlay">{hostTopic[0].name}</div>
             </NavLink>
@@ -72,20 +72,20 @@ function HomePage() {
           <div className="col-6 col-lg-6 p-0">
             <div className="row">
               <div className="col-6 col-lg-6 dele-pa">
-                <NavLink className="item_body nav-link p-0" to="">
+                <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[1].id}>
                   <img className="brightness" src={hostTopic[1].picture}></img>
                   <div className="overlay">{hostTopic[1].name}</div>
                 </NavLink>
               </div>
               <div className="col-6 col-lg-6">
-                <NavLink className="item_body nav-link p-0" to="">
+                <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[2].id}>
                   <img className="brightness" src={hostTopic[2].picture}></img>
                   <div className="overlay">{hostTopic[2].name}</div>
                 </NavLink>
               </div>
             </div>
             <div className="add-pa">
-              <NavLink className="item_body nav-link p-0" to="">
+              <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[3].id}>
                 <img className="brightness" src={hostTopic[3].picture}></img>
                 <div className="overlay">{hostTopic[3].name}</div>
               </NavLink>
@@ -102,7 +102,7 @@ function HomePage() {
             </h3>
             </div>
             <div className="col-5 col-lg-2">
-            <button className="button-60">More</button>
+            <NavLink className="button-60 untext" to='/more_project'>More</NavLink>
             </div>
             <div className="sort_body"></div>
             <div className="line_body"></div>
@@ -160,7 +160,7 @@ function HomePage() {
             </form>
           </div>
           <div className="col-2 col-sm-2">
-          <button className="button-60">More</button>
+          <NavLink className="button-60 untext" to='/more_user'>More</NavLink>
           </div>
           <div className="line_body"></div>
         </div>

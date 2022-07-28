@@ -881,6 +881,7 @@ textarea {
   }
   .untext{
     text-decoration: none !important;
+    color:#3f75cf;
   }
   .our-team .picture {
     display: inline-block;
@@ -1031,4 +1032,13 @@ textarea {
 
 .button-60:focus:not(:active) {
   box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+}
+.card{
+  height: 900px !important;
+}
+.feedback{
+  color: red;
+}
+p{
+  color: back;
 }
