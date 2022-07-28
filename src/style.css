@@ -719,8 +719,8 @@ body {
 .search-icon {
   width: 70%;
   height: 70%;
+  left: -100%;
   position: relative;
-  left: -30px;
   color: white;
   cursor: pointer;
 }

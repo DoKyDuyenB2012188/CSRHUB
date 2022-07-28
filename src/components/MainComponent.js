@@ -38,7 +38,7 @@ function Main(){
                 <Route exact path='/more_project' element={<SearchProject/>}/>
                 <Route exact path='/more_user' element={<SearchUser/>}/>
             </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )
 }

@@ -253,6 +253,9 @@
   justify-content: center;
 }
 @media screen and (max-width: 767px) {
+  .search-container{
+    width: 30% !important;
+  }
   .addi{
     display: block;
   }
