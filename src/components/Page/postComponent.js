@@ -17,7 +17,7 @@ const schema = yup.object().shape({
 function PostPage() {
   const {register, handleSubmit, formState: { errors }} = useForm({resolver: yupResolver(schema)})
   return (
-    <section className="container card">
+    <section className="container card card_main">
       <h3>POST A PROJECT</h3>
       <form className="card-body" onSubmit={handleSubmit((data)=>{
                         console.log(data)

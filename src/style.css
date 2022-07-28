@@ -728,9 +728,6 @@ body {
   position: relative;
 }
 .search-container{
-  position: absolute;
-  bottom: 40%;
-  left: -10%;
   height: 30px;
 }
 .card{
@@ -776,7 +773,6 @@ hr {
 /** WRAPPER */
 
 #wrapper {
-	width: 1100px;
 	padding: 0px 50px;
 	background: #FFFFFF;
 }

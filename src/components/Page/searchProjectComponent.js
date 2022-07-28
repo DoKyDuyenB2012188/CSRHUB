@@ -6,9 +6,16 @@ function SearchProject() {
   });
   return (
     <div className="container">
-      <h3>All project</h3>
+      <div className="row">
+        <div className="col-3 col-lg-3">
+          <h3>All project</h3>
+        </div>
+        <div className="col-6 col-lg-6">
+         
+        </div>
+      </div>
       <div id="wrapper" className="container">
-        {Project}
+        <div className="row">{Project}</div>
       </div>
     </div>
   );

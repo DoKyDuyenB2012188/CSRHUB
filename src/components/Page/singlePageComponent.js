@@ -1,6 +1,5 @@
 import projects from "../../shared/projects";
-function SinglePage({project}) {
-
+function SinglePage({ project }) {
   return (
     <div id="wrapper" className="container">
       <div id="header">
@@ -14,33 +13,31 @@ function SinglePage({project}) {
         </div>
       </div>
       <div id="page" className="container-fluid">
-        <div id="cbox1">
-          <p>
+        <div id="row">
+          <div className="col-12 col-lg-6 offset-md-3">
             <img
-              style={{marginLeft:"20%"}}
+              style={{ marginLeft: "20%" }}
               src={project.picture}
               width="60%"
               height="5%"
               alt=""
             />
-          </p>
-          <h2>{project.name}</h2>
-          <p>
-            {project.title}
-          </p>
-          <p>
-            {project.content}
-          </p>
-          <p>
-            <button className="button-60">Contact us</button>
-          </p>
+          </div>
         </div>
-
-        <div id="box2">
+        <div className="row">
+          <div className="col-12 col-lg-12">
+            <h2>{project.name}</h2>
+            <p>{project.title}</p>
+            <p>{project.content}</p>
+          </div>
+        </div>
+        <p>
+          <button className="button-60">Contact us</button>
+        </p>
+        <div className="row">
           <h2>Relate projects</h2>
-         
           <p>
-          <button className="button-60">Read more</button>
+            <button className="button-60">Read more</button>
           </p>
         </div>
       </div>

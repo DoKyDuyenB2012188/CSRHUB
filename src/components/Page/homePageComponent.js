@@ -18,22 +18,22 @@ function HomePage() {
     }
   });
   const Profiles = profiles.map((profile) => {
-    return(
-      <CardU key={profile.id} profile={profile}/>
-    )
+    return <CardU key={profile.id} profile={profile} />;
   });
   return (
     <div className="container-fluid p-0">
       <div className="row bg">
         <div className="col-5 col-sm-5 hero h-100">
-          <div className="hero_title">
-            <h2>Make a Difference</h2>
-            <p>
-              Use our ratings to find and support nonprofits that align with
-              your passions and values
-            </p>
+          <div className="row">
+            <div className="hero_title">
+              <h2>Make a Difference</h2>
+              <p>
+                Use our ratings to find and support nonprofits that align with
+                your passions and values
+              </p>
+            </div>
           </div>
-          <div className="hero_search" id="cover">
+          <div className="hero_search row" id="cover">
             <form method="get" action="">
               <div className="tb">
                 <div className="td">
@@ -64,7 +64,10 @@ function HomePage() {
         </div>
         <div className="row w-100 p-0">
           <div className="col-6 col-lg-6">
-            <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[0].id}>
+            <NavLink
+              className="item_body nav-link p-0"
+              to={"/single_page/" + hostTopic[0].id}
+            >
               <img className="brightness" src={hostTopic[0].picture}></img>
               <div className="overlay">{hostTopic[0].name}</div>
             </NavLink>
@@ -72,20 +75,29 @@ function HomePage() {
           <div className="col-6 col-lg-6 p-0">
             <div className="row">
               <div className="col-6 col-lg-6 dele-pa">
-                <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[1].id}>
+                <NavLink
+                  className="item_body nav-link p-0"
+                  to={"/single_page/" + hostTopic[1].id}
+                >
                   <img className="brightness" src={hostTopic[1].picture}></img>
                   <div className="overlay">{hostTopic[1].name}</div>
                 </NavLink>
               </div>
               <div className="col-6 col-lg-6">
-                <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[2].id}>
+                <NavLink
+                  className="item_body nav-link p-0"
+                  to={"/single_page/" + hostTopic[2].id}
+                >
                   <img className="brightness" src={hostTopic[2].picture}></img>
                   <div className="overlay">{hostTopic[2].name}</div>
                 </NavLink>
               </div>
             </div>
             <div className="add-pa">
-              <NavLink className="item_body nav-link p-0" to={'/single_page/'+hostTopic[3].id}>
+              <NavLink
+                className="item_body nav-link p-0"
+                to={"/single_page/" + hostTopic[3].id}
+              >
                 <img className="brightness" src={hostTopic[3].picture}></img>
                 <div className="overlay">{hostTopic[3].name}</div>
               </NavLink>
@@ -97,12 +109,14 @@ function HomePage() {
         <div className="col">
           <div className="row title_body">
             <div className="col-7 col-lg-10">
-            <h3>
-              <strong>ACTIVITIES</strong>
-            </h3>
+              <h3>
+                <strong>ACTIVITIES</strong>
+              </h3>
             </div>
             <div className="col-5 col-lg-2">
-            <NavLink className="button-60 untext" to='/more_project'>More</NavLink>
+              <NavLink className="button-60 untext" to="/more_project">
+                More
+              </NavLink>
             </div>
             <div className="sort_body"></div>
             <div className="line_body"></div>
@@ -144,23 +158,35 @@ function HomePage() {
         <div className="row title_body">
           <div className="col-3 col-sm-3">
             <h3>
-              <strong>Charity Houese</strong>
+              <strong>Charity House</strong>
             </h3>
           </div>
-          <div className="col-7 col-sm-7 box_search">
+
+          <div className="col-12 col-sm-7 box_search">
             <form
               className="search-container"
               action="//llamaswill.tumblr.com/search"
             >
-              <input id="search-box" type="text" className="search-box" name="q" placeholder="search charity house" />
+              <input
+                id="search-box"
+                type="text"
+                className="search-box"
+                name="q"
+                placeholder="search charity house"
+              />
               <label htmlFor="search-box">
-                <img className="glyphicon glyphicon-search search-icon" src="./asset/img/icon_search.svg"/>
+                <img
+                  className="glyphicon glyphicon-search search-icon"
+                  src="./asset/img/icon_search.svg"
+                />
               </label>
               <input type="submit" id="search-submit" />
             </form>
           </div>
-          <div className="col-2 col-sm-2">
-          <NavLink className="button-60 untext" to='/more_user'>More</NavLink>
+          <div className="col-12 col-sm-2">
+            <NavLink className="button-60 untext" to="/more_user">
+              More
+            </NavLink>
           </div>
           <div className="line_body"></div>
         </div>

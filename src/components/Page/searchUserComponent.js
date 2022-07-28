@@ -6,8 +6,8 @@ function SearchUser() {
   });
   return (
     <div className="container">
-        <h3>All profile</h3>
-      <div id="wrapper" className="d-flex justify-content-center">
+      <h3>All profile</h3>
+      <div id="wrapper" className="addi row">
         {Profiles}
       </div>
     </div>
