@@ -10,6 +10,7 @@ import PostPage from './Page/postComponent';
 import projects from '../shared/projects';
 import SearchProject from './Page/searchProjectComponent';
 import SearchUser from './Page/searchUserComponent';
+import SearchTopicPro from './Page/searchTopicProComponent';
 import {BrowserRouter,Routes,Route, useParams} from "react-router-dom";
 function Main(){
     const ShowProfile = () =>{
@@ -22,6 +23,13 @@ function Main(){
         let params = useParams();
         return(
             <SinglePage project={projects.filter((project)=> project.id === params.projectId)[0]}/>
+        )
+    }
+    const SeachTopic = () =>{
+        let params = useParams();
+        console.log(params.topic_search);
+        return(
+            <SearchTopicPro topic={params.topic_search}/>
         )
     }
     return(
@@ -37,6 +45,7 @@ function Main(){
                 <Route exact path='/single_page/:projectId' element={<ShowProject/>}/>
                 <Route exact path='/more_project' element={<SearchProject/>}/>
                 <Route exact path='/more_user' element={<SearchUser/>}/>
+                <Route exact path='/search_topic/:topic_search' element={<SeachTopic/>}/>
             </Routes>
         <Footer />
       </div>

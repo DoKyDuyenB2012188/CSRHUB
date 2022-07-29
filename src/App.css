@@ -357,6 +357,8 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding-top: 12%;
+    padding-bottom: 5%;
 }
 .hero_title{
     margin-top: 200px;
@@ -407,11 +409,12 @@
   
   .input_search[type="text"] {
     position: absolute;
-    width: 100%;
+    width: 70%;
     height: 50px;
     font-size: 35px;
     line-height: 1;
     top:10px;
+    border-radius: 20px;
   }
   
   .input_search[type="text"]::placeholder {

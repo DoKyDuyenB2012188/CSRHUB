@@ -1,17 +1,34 @@
 import projects from "../../shared/projects";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Card from "./CardComponent";
 import CardU from "./CardComponentU";
 import profiles from "../../shared/profile";
+import { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+const schema = yup.object().shape({
+  search_project: yup.string(),
+  search_profile: yup.string(),
+});
 function HomePage() {
+  let navigate = useNavigate()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
   const hostTopic = projects.filter((project) => {
     return project.type == "hot";
   });
   const topics = projects.filter((project) => {
     return project.type != "hot";
   });
+  let count = 0;
   const normalTopic = topics.map((topic) => {
-    if (topic.type != "popular") {
+    if (topic.type != "popular" && count < 5) {
+      count = count + 1;
       return <Card key={topic.id} topic={topic}></Card>;
     } else {
       return <div></div>;
@@ -22,9 +39,9 @@ function HomePage() {
   });
   return (
     <div className="container-fluid p-0">
-      <div className="row bg">
+      <div className="row bg mari">
         <div className="col-5 col-sm-5 hero h-100">
-          <div className="row">
+          <div className="row d-flex align-items-center">
             <div className="hero_title">
               <h2>Make a Difference</h2>
               <p>
@@ -34,7 +51,14 @@ function HomePage() {
             </div>
           </div>
           <div className="hero_search row" id="cover">
-            <form method="get" action="">
+            <form
+              method="get"
+              onSubmit={handleSubmit((data) => {
+                const path = `/search_topic/${data.search_project}`;
+                console.log(path)
+                navigate(path)
+              })}
+            >
               <div className="tb">
                 <div className="td">
                   <input
@@ -42,6 +66,7 @@ function HomePage() {
                     placeholder="search"
                     type="text"
                     required
+                    {...register("search_project")}
                   />
                 </div>
                 <div className="td" id="s-cover">
@@ -180,7 +205,11 @@ function HomePage() {
                   src="./asset/img/icon_search.svg"
                 />
               </label>
-              <input type="submit" id="search-submit" />
+              <input
+                type="submit"
+                id="search-submit"
+                {...register("search_profile")}
+              />
             </form>
           </div>
           <div className="col-12 col-sm-2">
