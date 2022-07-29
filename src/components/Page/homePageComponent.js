@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Card from "./CardComponent";
 import CardU from "./CardComponentU";
 import profiles from "../../shared/profile";
-import { useState } from "react";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";

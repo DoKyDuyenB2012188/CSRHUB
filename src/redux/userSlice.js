@@ -13,11 +13,8 @@ const UserSlice = createSlice({
         SignUp: (state, action) => {
             state.signIn = action.payload;
         },
-        upID:(state, action) =>{
-            state.id = action.payload;
-        }
     },
 });
 
-export const {initUser, SignUp,upID } = UserSlice.actions;
+export const {initUser, SignUp } = UserSlice.actions;
 export default UserSlice.reducer;

@@ -1,4 +1,4 @@
-import projects from "../../shared/projects";
+
 function SinglePage({ project }) {
   return (
     <div id="wrapper" className="container">

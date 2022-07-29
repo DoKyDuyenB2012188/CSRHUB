@@ -11,7 +11,7 @@ import projects from '../shared/projects';
 import SearchProject from './Page/searchProjectComponent';
 import SearchUser from './Page/searchUserComponent';
 import SearchTopicPro from './Page/searchTopicProComponent';
-import {BrowserRouter,Routes,Route, useParams} from "react-router-dom";
+import {Routes,Route, useParams} from "react-router-dom";
 import SearchChar from './Page/searchCharacterComponent';
 function Main(){
     const ShowProfile = () =>{

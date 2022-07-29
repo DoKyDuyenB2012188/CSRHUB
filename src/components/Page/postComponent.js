@@ -2,8 +2,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { postOrg } from "../../redux/api";
-import { proPost } from "../../redux/api";
 const schema = yup.object().shape({
   userName: yup.string().min(3).max(10).required("required your name"),
   projectName: yup.string().min(3).max(10).required("required your name"),
@@ -28,13 +26,7 @@ function PostPage() {
       <form
         className="card-body"
         onSubmit={handleSubmit((data) => {
-          const pro = {
-            name: data.projectName,
-            image: data.urlImg,
-            tag: data.description,
-            location: data.address,
-            category: data.topic,
-          };
+         console.log(data)
 
         })}
       >
