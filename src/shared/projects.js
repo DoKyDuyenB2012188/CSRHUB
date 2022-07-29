@@ -6,7 +6,7 @@ const projects = [
         name:"Ukraine Relief & Recovery",
         title:"",
         type:"hot",
-        topic:['human','environment'],
+        topic:['human','enviroment'],
         content:"Since the war began between Ukraine and the Russian Federation on February 24, 2022*, according to a report released in June by the United Nations High Commissioner for Refugees (UNHCR), over 7 million people have been displaced – almost 5 million of which have been recorded across Europe. What has been reported as the largest refugee crisis since World War II has become a far-reaching humanitarian disaster threatening economies across Europe. This crisis includes rising inflation and shortages of food and other goods. Donor support is still needed for relief and recovery efforts, but that need will eventually shift to the long-term rebuilding of Ukraine's economy and infrastructure. On this page is a list of highly-rated charities providing humanitarian services in Ukraine and the surrounding region. To the extent that we can also highlight nonprofits addressing peace-building efforts to encourage diplomacy and prevent further military action, they will be included. We encourage you to re-share and visit this page often.The 3- and 4-Star rated charities included in this list have earned their ratings by being financially efficient and transparent in their operations. These nonprofits are larger and national in scope. Please click on the names of the high-performing charities included in our list to learn more about their mission, programs, and services and to make a donation via the Giving Basket.",
         day:"",
         update:"",

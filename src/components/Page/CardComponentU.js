@@ -8,6 +8,7 @@ function CardU({profile}) {
           <div className="picture">
             <img
               className="img-fluid"
+              height='10%'
               src={profile.avatar}
             />
           </div>

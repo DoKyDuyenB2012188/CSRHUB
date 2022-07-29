@@ -1,5 +1,5 @@
 import PostPage from "../components/Page/postComponent";
-import { Dispatch } from "react";
+import { useDispatch } from "react";
 import { upID } from "./userSlice";
 export async function postProject(data = {}) {
   // Default options are marked with *
@@ -22,7 +22,8 @@ export async function postProject(data = {}) {
   return response.json(); // parses JSON response into native JavaScript objects
 }
 
-export function postOrg(data) {
+export function PostOrg(data) {
+    const dispatch = useDispatch();
   fetch("https://csr-hub-be.herokuapp.com/api/Org", {
     method: "POST", // or 'PUT'
     headers: {

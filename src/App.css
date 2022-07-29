@@ -1066,3 +1066,6 @@ p{
   color: back;
 }
 /*seach in more*/
+.fix{
+  height:10% !important;
+}
