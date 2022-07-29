@@ -1,7 +1,9 @@
-import React from 'react';
-import {useForm} from 'react-hook-form';
+import React from "react";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { postOrg } from "../../redux/api";
+import { proPost } from "../../redux/api";
 const schema = yup.object().shape({
   userName: yup.string().min(3).max(10).required("required your name"),
   projectName: yup.string().min(3).max(10).required("required your name"),
@@ -12,16 +14,30 @@ const schema = yup.object().shape({
   address: yup.string(),
   city: yup.string(),
   contact: yup.string().email(),
-  number: yup.number()
+  number: yup.number(),
 });
 function PostPage() {
-  const {register, handleSubmit, formState: { errors }} = useForm({resolver: yupResolver(schema)})
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
   return (
     <section className="container card card_main">
       <h3>POST A PROJECT</h3>
-      <form className="card-body" onSubmit={handleSubmit((data)=>{
-                        console.log(data)
-                    })}>
+      <form
+        className="card-body"
+        onSubmit={handleSubmit((data) => {
+          const pro = {
+            name: data.projectName,
+            image: data.urlImg,
+            tag: data.description,
+            location: data.address,
+            category: data.topic,
+          };
+          
+        })}
+      >
         <div className="row">
           <div class="form-group focused col-12 col-lg-12">
             <label class="form-control-label" htmlFor="input-username">
@@ -32,9 +48,9 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="url"
-              {...register('urlImg')}
+              {...register("urlImg")}
             />
-            <small className='feedback'>{errors.urlImg?.message}</small>
+            <small className="feedback">{errors.urlImg?.message}</small>
           </div>
         </div>
         <div className="row">
@@ -47,9 +63,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="Username"
-              {...register('userName')} required
+              {...register("userName")}
+              required
             />
-            <small className='feedback'>{errors.userName?.message}</small>
+            <small className="feedback">{errors.userName?.message}</small>
           </div>
 
           <div class="form-group focused col-6 col-lg-6">
@@ -61,9 +78,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="project name"
-              {...register('projectName')} required
+              {...register("projectName")}
+              required
             />
-            <small className='feedback'>{errors.projectName?.message}</small>
+            <small className="feedback">{errors.projectName?.message}</small>
           </div>
 
           <div class="form-group focused col-6 col-lg-6">
@@ -75,9 +93,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="day of post"
-              {...register('dayPost')} required
+              {...register("dayPost")}
+              required
             />
-            <small className='feedback'>{errors.dayPost?.message}</small>
+            <small className="feedback">{errors.dayPost?.message}</small>
           </div>
 
           <div class="form-group focused col-6 col-lg-6">
@@ -89,9 +108,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="topic"
-              {...register('topic')} required
+              {...register("topic")}
+              required
             />
-            <small className='feedback'>{errors.topic?.message}</small>
+            <small className="feedback">{errors.topic?.message}</small>
           </div>
         </div>
         <div className="row">
@@ -101,11 +121,12 @@ function PostPage() {
               rows="4"
               class="form-control form-control-alternative"
               placeholder="A few words about you ..."
-              {...register('description')} required
+              {...register("description")}
+              required
             >
               A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.
             </textarea>
-            <small className='feedback'>{errors.description?.message}</small>
+            <small className="feedback">{errors.description?.message}</small>
           </div>
         </div>
         <hr />
@@ -120,9 +141,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="address"
-              {...register('address')} required
+              {...register("address")}
+              required
             />
-            <small className='feedback'>{errors.address?.message}</small>
+            <small className="feedback">{errors.address?.message}</small>
           </div>
         </div>
         <div className="row">
@@ -135,9 +157,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="HCM-city"
-              {...register('city')} required
+              {...register("city")}
+              required
             />
-            <small className='feedback'>{errors.city?.message}</small>
+            <small className="feedback">{errors.city?.message}</small>
           </div>
 
           <div class="form-group focused col-4 col-lg-4">
@@ -149,9 +172,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="number"
-              {...register('number')} required
+              {...register("number")}
+              required
             />
-            <small className='feedback'>{errors.number?.message}</small>
+            <small className="feedback">{errors.number?.message}</small>
           </div>
 
           <div class="form-group focused col-4 col-lg-4">
@@ -163,9 +187,10 @@ function PostPage() {
               id="input-username"
               class="form-control form-control-alternative"
               placeholder="email"
-              {...register('contact')} required
+              {...register("contact")}
+              required
             />
-            <small className='feedback'>{errors.contact?.message}</small>
+            <small className="feedback">{errors.contact?.message}</small>
           </div>
           <div className="row">
             <div className="col-2 col-lg-2 offset-md-10">

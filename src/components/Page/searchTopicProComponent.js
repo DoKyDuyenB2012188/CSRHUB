@@ -1,8 +1,10 @@
 import projects from "../../shared/projects";
 import Card from "./CardComponent";
 function SearchTopicPro({topic}) {
+    topic.toLowerCase();
+    const topics = topic.split(' ');
     const Projects = projects.map((project)=>{
-        if(project.topic.includes(topic)){
+        if(project.topic.toLowerCase().some(r=> topics.includes(r))){
             return <Card topic={project}/>
         }
     })

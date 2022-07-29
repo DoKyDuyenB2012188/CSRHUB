@@ -191,6 +191,10 @@ function HomePage() {
             <form
               className="search-container"
               action="//llamaswill.tumblr.com/search"
+              onSubmit={handleSubmit((data) => {
+                const path = `/search_profile/${data.search_profile}`;
+                navigate(path.toString())
+              })}
             >
               <input
                 id="search-box"
@@ -198,6 +202,7 @@ function HomePage() {
                 className="search-box"
                 name="q"
                 placeholder="search charity house"
+                {...register("search_profile")}
               />
               <label htmlFor="search-box">
                 <img
@@ -208,7 +213,6 @@ function HomePage() {
               <input
                 type="submit"
                 id="search-submit"
-                {...register("search_profile")}
               />
             </form>
           </div>

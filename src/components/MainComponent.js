@@ -12,6 +12,7 @@ import SearchProject from './Page/searchProjectComponent';
 import SearchUser from './Page/searchUserComponent';
 import SearchTopicPro from './Page/searchTopicProComponent';
 import {BrowserRouter,Routes,Route, useParams} from "react-router-dom";
+import SearchChar from './Page/searchCharacterComponent';
 function Main(){
     const ShowProfile = () =>{
         let params = useParams();
@@ -27,9 +28,14 @@ function Main(){
     }
     const SeachTopic = () =>{
         let params = useParams();
-        console.log(params.topic_search);
         return(
             <SearchTopicPro topic={params.topic_search}/>
+        )
+    }
+    const SeachProfile = () =>{
+        let params = useParams();
+        return(
+            <SearchChar char={params.topic_profile}/>
         )
     }
     return(
@@ -46,6 +52,7 @@ function Main(){
                 <Route exact path='/more_project' element={<SearchProject/>}/>
                 <Route exact path='/more_user' element={<SearchUser/>}/>
                 <Route exact path='/search_topic/:topic_search' element={<SeachTopic/>}/>
+                <Route exact path='/search_profile/:topic_profile' element={<SeachProfile/>}/>
             </Routes>
         <Footer />
       </div>

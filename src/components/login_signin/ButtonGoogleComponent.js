@@ -3,6 +3,7 @@ import { useScript } from "./hooks/useSript";
 import jwt_deocde from "jwt-decode";
 import { initUser } from "../../redux/userSlice";
 import { useDispatch } from "react-redux";
+import { postOrg } from "../../redux/api";
 import { useNavigate } from "react-router-dom";
 function LoginGoogle() {
   const dispatch = useDispatch();
@@ -13,6 +14,12 @@ function LoginGoogle() {
     let payload = jwt_deocde(userCred);
     console.log(payload);
     dispatch(initUser(payload));
+    postOrg({
+      name: payload.name,
+      description: "nothing",
+      image: payload.picture,
+      email: payload.email
+    })
     navigate("/home");
   };
   useScript("https://accounts.google.com/gsi/client", () => {
