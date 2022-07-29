@@ -33,6 +33,8 @@ export function PostOrg(data) {
   })
     .then((response) => response.json())
     .then((data) => {
+        dispatch(upID(data.id))
+        console.log(data.id)
       console.log("Success:", data);
     })
     .catch((error) => {

@@ -20,7 +20,7 @@ const projects = [
         name:"Afghanistan Earthquake",
         title:"",
         type:"hot",
-        topic:['environment'],
+        topic:['enviroment','human'],
         content:"On Wednesday, June 22, a 5.9 magnitude earthquake struck southeast Afghanistan near the Pakistani border. Initial reports estimate more than 1,000 people may have died and over 2,000 homes destroyed. The area impacted is remote; far from hospitals and aid, and already overwhelmed with a food crisis. Clean water, food, medical supplies, as well as shelter from severe weather, are all in short supply.The highly rated organizations included on this page have been vetted by Charity Navigator analysts as providing relief and support to those affected with dedicated funds in response. Charity Navigator will continue to update this resource as other nonprofits providing or funding direct relief are approved. Please click on the names of the high-performing charities included in our list to learn more about their mission, programs, and services and to make a donation via the Giving Basket.",
         day:"",
         update:"",
