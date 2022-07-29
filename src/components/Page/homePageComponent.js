@@ -192,7 +192,8 @@ function HomePage() {
               className="search-container"
               action="//llamaswill.tumblr.com/search"
               onSubmit={handleSubmit((data) => {
-                const path = `/search_profile/${data.search_profile}`;
+                const pro = data.search_profile.split(' ')[0];
+                const path = `/search_profile/${pro}`;
                 navigate(path.toString())
               })}
             >
