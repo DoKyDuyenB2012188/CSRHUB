@@ -1069,3 +1069,6 @@ p{
 .fix{
   height:10% !important;
 }
+.fixdex{
+  z-index: -1;
+}

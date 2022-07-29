@@ -23,7 +23,7 @@ function PostPage() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
   return (
-    <section className="container card card_main">
+    <section className="fixdex container card card_main">
       <h3>POST A PROJECT</h3>
       <form
         className="card-body"
@@ -35,7 +35,7 @@ function PostPage() {
             location: data.address,
             category: data.topic,
           };
-          
+
         })}
       >
         <div className="row">
